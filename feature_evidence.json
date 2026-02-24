@@ -1,0 +1,41 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-investigate-and-fix-the-dashboard-page-so-that-all-three-main-sections-today-s-study-target-with-chapter-completion-checkboxes-and-progress-or-the-prompt-to-create-a-target-if-none-exists-render-correctly-and-are-visible-after-deployment-the-fix-must-persist-through-production-deployment-and-not-regress",
+      "featureTitle": "Investigate and fix the Dashboard page so that all three main sections (today's study target with chapter completion checkboxes and progress, or the prompt to create a target if none exists) render correctly and are visible after deployment. The fix must persist through production deployment and not regress.",
+      "files": [
+        "frontend/src/pages/Dashboard.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-audit-and-correct-the-global-css-frontend-src-index-css-and-tailwind-configuration-frontend-tailwind-config-js-to-ensure-that-oklch-based-css-custom-property-color-tokens-and-tailwind-utility-classes-do-not-cause-any-dashboard-sections-to-be-hidden-invisible-or-improperly-styled-e-g-text-or-backgrounds-with-identical-colors-zero-opacity-or-display-none",
+      "featureTitle": "Audit and correct the global CSS (frontend/src/index.css) and Tailwind configuration (frontend/tailwind.config.js) to ensure that OKLCH-based CSS custom property color tokens and Tailwind utility classes do not cause any dashboard sections to be hidden, invisible, or improperly styled (e.g., text or backgrounds with identical colors, zero opacity, or display:none).",
+      "files": [
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

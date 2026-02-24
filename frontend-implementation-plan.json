@@ -1,0 +1,47 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Fix Dashboard Rendering Issues in Production",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Investigate and fix the Dashboard page so that all three main sections (today's study target with chapter completion checkboxes and progress, or the prompt to create a target if none exists) render correctly and are visible after deployment",
+      "acceptanceCriteria": [
+        "The Dashboard page loads without blank or invisible sections in production.",
+        "Today's study target section (chapter checkboxes + progress bar) is fully visible when a target exists.",
+        "The 'create a target' prompt is visible when no target exists for today.",
+        "All three main dashboard sections render correctly in both light and dark modes.",
+        "The fix is stable after a full production deployment."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Dashboard.tsx",
+          "operation": "modify",
+          "description": "Audit and fix all Tailwind utility classes and inline styles in the Dashboard component to ensure all sections (loading state, empty state prompt, and study target with checkboxes/progress) are visible. Replace any classes that may cause text to be hidden (e.g., text colors matching backgrounds, opacity issues). Ensure proper contrast and visibility for all text, backgrounds, borders, and interactive elements in both light and dark modes. Add explicit color classes (text-foreground, bg-background, border-border) where needed to override any conflicting theme variables."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Audit and correct the global CSS and Tailwind configuration to ensure that OKLCH-based CSS custom property color tokens and Tailwind utility classes do not cause any dashboard sections to be hidden, invisible, or improperly styled",
+      "acceptanceCriteria": [
+        "No dashboard section has text color matching its background color.",
+        "No dashboard section has opacity: 0, visibility: hidden, or display: none applied unexpectedly.",
+        "OKLCH color tokens resolve correctly in both light and dark themes.",
+        "Tailwind utility classes applied to dashboard sections produce visible, correctly styled output."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Audit all OKLCH-based CSS custom property definitions for both light and dark themes. Ensure that foreground/background color pairs have sufficient contrast and are distinct. Verify that no color tokens resolve to transparent, invisible, or conflicting values. Fix any OKLCH values that produce zero opacity or identical foreground/background colors. Ensure all theme tokens (--background, --foreground, --card, --card-foreground, --primary, --primary-foreground, etc.) are properly defined and functional in both .light and .dark selectors."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Review the Tailwind theme extension to ensure all color mappings reference valid CSS custom properties. Verify that the oklch() wrapper correctly applies to all theme color values. Ensure no Tailwind utility classes (text-*, bg-*, border-*) can produce invisible or hidden content when applied to Dashboard sections. Add fallback values if necessary to prevent rendering failures when CSS variables are unavailable."
+        }
+      ]
+    }
+  ]
+}

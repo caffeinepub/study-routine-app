@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Project with a dashboard feature that has a known visibility/display bug persisting after multiple deployment attempts.",
+  "architectural_notes": [],
+  "known_issues": [
+    "Dashboard not displaying correctly after deployment — bug persists through Version 3"
+  ],
+  "isFixRequest": true,
+  "existing_features": [
+    {
+      "id": "feature-investigate-and-fix-the-dashboard-page-so-that-all-three-main-sections-today-s-study-target-with-chapter-completion-checkboxes-and-progress-or-the-prompt-to-create-a-target-if-none-exists-render-correctly-and-are-visible-after-deployment-the-fix-must-persist-through-production-deployment-and-not-regress",
+      "title": "Investigate and fix the Dashboard page so that all three main sections (today's study target with chapter completion checkboxes and progress, or the prompt to create a target if none exists) render correctly and are visible after deployment. The fix must persist through production deployment and not regress.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-audit-and-correct-the-global-css-frontend-src-index-css-and-tailwind-configuration-frontend-tailwind-config-js-to-ensure-that-oklch-based-css-custom-property-color-tokens-and-tailwind-utility-classes-do-not-cause-any-dashboard-sections-to-be-hidden-invisible-or-improperly-styled-e-g-text-or-backgrounds-with-identical-colors-zero-opacity-or-display-none",
+      "title": "Audit and correct the global CSS (frontend/src/index.css) and Tailwind configuration (frontend/tailwind.config.js) to ensure that OKLCH-based CSS custom property color tokens and Tailwind utility classes do not cause any dashboard sections to be hidden, invisible, or improperly styled (e.g., text or backgrounds with identical colors, zero opacity, or display:none).",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [],
+  "projectName": "Fix dashboard not displaying correctly after deployment",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

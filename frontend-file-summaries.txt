@@ -1,0 +1,11 @@
+{
+  "frontend/src/App.tsx": "Main application component with TanStack Router setup, defining routes for Dashboard, Subjects, Create Target, and Calendar pages, wrapped with ThemeProvider and Toaster.",
+  "frontend/src/components/Layout.tsx": "Layout component providing consistent header navigation with logo and menu items, main content area, and footer with attribution link.",
+  "frontend/src/pages/Dashboard.tsx": "Dashboard page displaying today's study target with hero image, progress indicators, and chapter completion checkboxes; fixes include correct chapter completion lookup via subjects data, explicit text-foreground/text-white classes for hero overlay text visibility, and corrected progress calculation.",
+  "frontend/src/pages/SubjectsPage.tsx": "Subjects management page with accordion view of all subjects, their chapters, completion status, and dialogs for adding new subjects and chapters.",
+  "frontend/src/pages/CreateTargetPage.tsx": "Target creation page with date picker and multi-select interface for choosing chapters across subjects to create daily study goals.",
+  "frontend/src/pages/CalendarPage.tsx": "Calendar view displaying monthly grid with study targets, completion indicators, and detailed view of selected date's target information.",
+  "frontend/src/hooks/useQueries.ts": "Custom React Query hooks for all backend operations including subjects management, chapter completion, and study target CRUD operations with proper cache invalidation.",
+  "frontend/src/index.css": "Global styles with warm academic OKLCH color palette — CSS custom properties now store raw channel values (L C H without the oklch() wrapper) so that Tailwind's `oklch(var(--token))` pattern resolves correctly in both light and dark modes.",
+  "frontend/tailwind.config.js": "Tailwind configuration extending theme with custom warm color palette using `oklch(var(--token))` pattern, Inter and Merriweather fonts, varied border radii, soft shadow utilities, and sidebar color tokens for academic aesthetic."
+}

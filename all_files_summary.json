@@ -1,0 +1,20 @@
+{
+  "backend/main.mo": "Motoko actor implementing a study tracker backend with subject/chapter management and study target CRUD operations, including query functions for retrieving subjects and targets by date or range.",
+  "feature_evidence.json": "Feature evidence report mapping two dashboard/CSS fix features to their affected files, components, test IDs, and confidence levels.",
+  "frontend-file-summaries.txt": "JSON document containing one-line summaries of each frontend source file, describing their roles in the study tracker app.",
+  "frontend/index.css": "Global Tailwind CSS entry point defining OKLCH-based CSS custom property color tokens (stored as raw channel values) for light and dark modes, plus base border and body styles.",
+  "frontend/index.html": "Minimal HTML shell for the React app, mounting the app into a root div and loading the main TypeScript entry point as an ES module.",
+  "frontend/src/App.tsx": "Root React component that sets up TanStack Router with routes for Dashboard, Subjects, Create Target, and Calendar pages, wrapped in ThemeProvider and Toaster.",
+  "frontend/src/components/Layout.tsx": "Shared layout component rendering a sticky header with navigation links, a main content area, and a footer with attribution.",
+  "frontend/src/hooks/useActor.ts": "Custom hook that creates and caches an authenticated or anonymous ICP actor using React Query, invalidating dependent queries whenever the identity changes.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Custom hook and context provider managing Internet Identity authentication state, exposing login/logout functions and status flags via an AuthClient.",
+  "frontend/src/hooks/useQueries.ts": "Defines React Query hooks for fetching and mutating subjects, chapters, and study targets via the backend actor, including queries for date ranges and mutations that invalidate relevant caches.",
+  "frontend/src/index.css": "Global CSS file that sets up Tailwind directives and defines a warm academic OKLCH color palette with CSS custom properties for both light and dark themes.",
+  "frontend/src/main.tsx": "Application entry point that renders the React app wrapped in QueryClientProvider and InternetIdentityProvider.",
+  "frontend/src/pages/CalendarPage.tsx": "Calendar page component that displays a monthly grid of study targets fetched by date range, allowing users to navigate months and view per-day target details and progress.",
+  "frontend/src/pages/CreateTargetPage.tsx": "Page for creating a new study target by selecting a date and toggling chapters from available subjects, then submitting the selection to the backend.",
+  "frontend/src/pages/Dashboard.tsx": "Main dashboard page showing today's study target with chapter completion checkboxes and progress, or a prompt to create a target if none exists.",
+  "frontend/src/pages/SubjectsPage.tsx": "Subjects management page that lists all subjects with their chapters and progress, and provides dialogs for adding new subjects and chapters.",
+  "frontend/tailwind.config.js": "Tailwind CSS configuration defining dark mode, content paths, custom OKLCH-based color tokens, typography, border radius, box shadows, and keyframe animations, with plugins for typography, container queries, and animate.",
+  "project_state.json": "Tracks project state at version 3, recording a known dashboard display bug persisting after deployment and two existing fix features targeting dashboard rendering and OKLCH CSS/Tailwind color token correctness."
+}

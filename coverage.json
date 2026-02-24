@@ -1,0 +1,50 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-24T17:36:47.741Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 2,
+    "implemented": 2,
+    "items": [
+      {
+        "id": "REQ-1",
+        "summary": "Investigate and fix the Dashboard page so that all three main sections (today's study target with chapter completion checkboxes and progress, or the prompt to create a target if none exists) render correctly and are visible after deployment. The fix must persist through production deployment and not regress.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/Dashboard.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/Dashboard.tsx"
+        ]
+      },
+      {
+        "id": "REQ-2",
+        "summary": "Audit and correct the global CSS (frontend/src/index.css) and Tailwind configuration (frontend/tailwind.config.js) to ensure that OKLCH-based CSS custom property color tokens and Tailwind utility classes do not cause any dashboard sections to be hidden, invisible, or improperly styled (e.g., text or backgrounds with identical colors, zero opacity, or display:none).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js"
+        ],
+        "matchedFiles": [
+          "frontend/src/index.css"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/index.css",
+    "frontend/src/pages/Dashboard.tsx",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

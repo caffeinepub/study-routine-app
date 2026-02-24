@@ -1,0 +1,59 @@
+{
+  "kind": "build_request",
+  "title": "Fix dashboard not displaying correctly after deployment",
+  "priority": "high",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Investigate and fix the Dashboard page so that all three main sections (today's study target with chapter completion checkboxes and progress, or the prompt to create a target if none exists) render correctly and are visible after deployment. The fix must persist through production deployment and not regress.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Dashboard still not working after the latest. deployment"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The Dashboard page loads without blank or invisible sections in production.",
+        "Today's study target section (chapter checkboxes + progress bar) is fully visible when a target exists.",
+        "The 'create a target' prompt is visible when no target exists for today.",
+        "All three main dashboard sections render correctly in both light and dark modes.",
+        "The fix is stable after a full production deployment."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Audit and correct the global CSS (frontend/src/index.css) and Tailwind configuration (frontend/tailwind.config.js) to ensure that OKLCH-based CSS custom property color tokens and Tailwind utility classes do not cause any dashboard sections to be hidden, invisible, or improperly styled (e.g., text or backgrounds with identical colors, zero opacity, or display:none).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Dashboard still not working after the latest. deployment"
+        ]
+      },
+      "acceptanceCriteria": [
+        "No dashboard section has text color matching its background color.",
+        "No dashboard section has opacity: 0, visibility: hidden, or display: none applied unexpectedly.",
+        "OKLCH color tokens resolve correctly in both light and dark themes.",
+        "Tailwind utility classes applied to dashboard sections produce visible, correctly styled output."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify files under frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, or frontend/src/components/ui.",
+    "Do not alter backend logic or data models."
+  ],
+  "nonGoals": [
+    "Adding new dashboard features or sections.",
+    "Changing the overall visual theme or color palette.",
+    "Fixing bugs on pages other than the Dashboard."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}
